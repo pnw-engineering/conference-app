@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{conference_title}}</title>
     <meta name="theme-color" content="#ecb73c" />
-    <link rel="manifest" href="manifest.json" />
+    <!-- <link rel="manifest" href="manifest.json" /> -->
     <link href="bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="bootstrap-icons.min.css" />
 
-    <link rel="apple-touch-icon" href="ios/apple-icon-180.png" />
+    <!-- <link rel="apple-touch-icon" href="ios/apple-icon-180.png" /> -->
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />

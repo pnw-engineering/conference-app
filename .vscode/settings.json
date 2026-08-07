@@ -1,0 +1,24 @@
+{
+  "liveServer.settings.port": 5501,
+  "files.exclude": {
+    ".github": true,
+    "hbes-export.py": true,
+    "index.template": true,
+    "manifest.template": true,
+    "pyproject.toml": true,
+    "requirements.txt": true,
+    "uv.lock": true
+  },
+  "search.exclude": {
+    ".github": true,
+    "hbes-export.py": true,
+    "index.template": true,
+    "manifest.template": true,
+    "pyproject.toml": true,
+    "requirements.txt": true,
+    "uv.lock": true
+  },
+  "files.associations": {
+    "*.template": "html"
+  }
+}

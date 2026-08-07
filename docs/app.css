@@ -1,0 +1,123 @@
+﻿        .fav-btn {
+            cursor: pointer;
+            padding: 0;
+            margin-left: 8px;
+            border: none;
+            background: none;
+            color: #ffc107;
+        }
+
+        body {
+            padding-bottom: 70px;
+        }
+
+        .nav-item_active {
+            color: #ecb73c !important;
+        }
+
+        .nav-link-btn.active-nav {
+            color: #ecb73c !important;
+            font-weight: bold;
+            transform: scale(1.1);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .pseudo-btn::before {
+            content: attr(data-time);
+        }
+
+        .accordion-item {
+            scroll-margin-top: 240px;
+        }
+
+        .accordion-button {
+            padding-right: 0.5rem !important;
+        }
+
+        .accordion-button::after {
+            transform: scale(0.85);
+        }
+
+        .accordion-button:disabled {
+            background-color: #f8f9fa;
+            /* Light gray background */
+            color: #6c757d;
+            /* Gray text (text-muted color) */
+            cursor: not-allowed;
+            /* Shows a blocked cursor on hover */
+            box-shadow: none;
+            /* Removes the active blue border glow */
+        }
+
+        /* Hide the arrow toggle icon */
+        .accordion-button:disabled::after {
+            background-image: none;
+        }
+
+        ol.affiliations {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline;
+            counter-reset: aff-counter;
+        }
+
+        ol.affiliations li {
+            display: inline;
+            counter-increment: aff-counter;
+        }
+
+        ol.affiliations li::before {
+            content: counter(aff-counter) ". ";
+            font-weight: 500;
+        }
+
+        /* Sub-tab styling for Morning/Afternoon */
+        .sub-nav-pills .nav-link {
+            font-size: 0.875rem;
+            padding: 0.25rem 0.85rem;
+            border-radius: 20px;
+            color: #6c757d;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+
+        .sub-nav-pills .nav-link.active {
+            color: #000;
+            background-color: #e9ecef;
+            border-color: #ced4da;
+            font-weight: 600;
+        }
+
+        .action-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            /* Fixed width ensures consistent centering */
+        }
+
+        .action-panel .btn,
+        .action-panel .fav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            padding: 0;
+            margin: 0;
+            /* Overrides .fav-btn { margin-left: 8px; } */
+            border: none;
+            background: none;
+        }
+
+        .action-panel img,
+        .action-panel .share-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            display: block;
+        }
+    
+

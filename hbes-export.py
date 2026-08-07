@@ -1,12 +1,12 @@
-import os
 import json
+import os
 import re
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 import requests
-from markdown import markdown
 from jinja2 import Template
+from markdown import markdown
 
 if os.getenv("API_TOKEN") is None:
     from dotenv import load_dotenv
@@ -15,6 +15,25 @@ if os.getenv("API_TOKEN") is None:
     load_dotenv()
 API_TOKEN = os.environ.get("API_TOKEN")
 EVENT_ID = os.environ.get("EVENT_ID")
+
+
+def fail(message):
+    raise SystemExit(message)
+
+
+def validate_runtime_inputs():
+    if not API_TOKEN or API_TOKEN.strip() in {"", "YOUR_INDICO_API_TOKEN"}:
+        fail(
+            "API_TOKEN is missing or still set to a placeholder. Set a real Indico API token and re-run."
+        )
+
+    if not EVENT_ID or EVENT_ID.strip() in {"", "YOUR_EVENT_ID"}:
+        fail(
+            "EVENT_ID is missing or still set to a placeholder. Set a real event ID and re-run."
+        )
+
+    if not EVENT_ID.strip().isdigit():
+        fail("EVENT_ID must be numeric (example: 12345).")
 
 
 def clean_text(text):
@@ -61,8 +80,9 @@ def get_response(endpoint, params):
         if response.status_code == 200:
             return response.json()
         else:
-            print(f"Failed to fetch event. Status code: {response.status_code}")
-            # print(response.text)
+            print(f"Failed to fetch API response. Status code: {response.status_code}")
+            print(f"Request URL: {response.url}")
+            print(f"Response body: {response.text}")
             return None
 
     except requests.exceptions.RequestException as e:
@@ -70,8 +90,15 @@ def get_response(endpoint, params):
 
 
 # Define the specific event ID to fetch
+validate_runtime_inputs()
+
 endpoint_events = f"/export/event/{EVENT_ID}.json"
 events = get_response(endpoint_events, {})
+
+if not events or "results" not in events or len(events["results"]) == 0:
+    fail(
+        "Could not load event metadata from Indico. Check API_TOKEN and EVENT_ID, then try again."
+    )
 
 conference = events["results"][0]
 tz = conference["timezone"]
@@ -80,6 +107,14 @@ conference_year = dict2datetime(conference["startDate"]).year
 
 endpoint_timetable = f"/export/timetable/{EVENT_ID}.json"
 timetable0 = get_response(endpoint_timetable, {})
+if (
+    not timetable0
+    or "results" not in timetable0
+    or EVENT_ID not in timetable0["results"]
+):
+    fail(
+        "Could not load timetable data from Indico. Check permissions and event visibility."
+    )
 timetable = timetable0["results"][EVENT_ID]
 
 author_keys = ["firstName", "familyName", "affiliation", "person_id", "email"]
