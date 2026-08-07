@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #64748b; }
+      .room-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+      .room-desc { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #475569; text-anchor: middle; }
+      .badge-text { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; fill: #ffffff; text-anchor: middle; }
+      .legend-text { font-family: system-ui, -apple-system, sans-serif; font-size: 11px; fill: #334155; }
+      .door-label { font-family: system-ui, -apple-system, sans-serif; font-size: 10px; fill: #2563eb; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Outer Canvas Background -->
+  <rect width="800" height="620" fill="#f8fafc" rx="12" />
+
+  <!-- Map Header -->
+  <text x="40" y="42" class="title">HOTEL &amp; CONVENTION CENTER</text>
+  <text x="40" y="60" class="subtitle">Level 2 • Main Conference Floor Plan</text>
+  <line x1="40" y1="70" x2="760" y2="70" stroke="#e2e8f0" stroke-width="2" />
+
+  <!-- ================= TOP SECTION ================= -->
+
+  <!-- Grand Ballroom A -->
+  <rect x="40" y="90" width="235" height="190" fill="#e0e7ff" stroke="#4338ca" stroke-width="2" rx="4" />
+  <text x="157" y="170" class="room-title">Grand Ballroom A</text>
+  <text x="157" y="190" class="room-desc">Cap: 250 • 2,400 sq ft</text>
+
+  <!-- Air Wall Partition (Dashed) -->
+  <line x1="275" y1="90" x2="275" y2="280" stroke="#4338ca" stroke-width="3" stroke-dasharray="6,6" />
+
+  <!-- Grand Ballroom B -->
+  <rect x="275" y="90" width="235" height="190" fill="#e0e7ff" stroke="#4338ca" stroke-width="2" rx="4" />
+  <text x="392" y="170" class="room-title">Grand Ballroom B</text>
+  <text x="392" y="190" class="room-desc">Cap: 250 • 2,400 sq ft</text>
+
+  <!-- Executive Boardroom -->
+  <rect x="530" y="90" width="230" height="110" fill="#fef3c7" stroke="#b45309" stroke-width="2" rx="4" />
+  <text x="645" y="140" class="room-title">Executive Boardroom</text>
+  <text x="645" y="158" class="room-desc">Cap: 20 • Conference Table</text>
+
+  <!-- Catering & Service Pantry -->
+  <rect x="530" y="210" width="230" height="70" fill="#f1f5f9" stroke="#64748b" stroke-width="2" rx="4" />
+  <text x="645" y="245" class="room-title">Catering &amp; Service</text>
+  <text x="645" y="260" class="room-desc">Staff Only Access</text>
+
+  <!-- ================= MIDDLE SECTION (FOYER) ================= -->
+
+  <!-- Grand Foyer / Registration Area -->
+  <rect x="40" y="290" width="720" height="100" fill="#ffffff" stroke="#94a3b8" stroke-width="2" rx="4" />
+  <text x="120" y="345" class="room-title" fill="#64748b">Grand Foyer / Pre-Function Area</text>
+
+  <!-- Registration Desk -->
+  <rect x="300" y="320" width="200" height="40" fill="#2563eb" rx="20" />
+  <text x="400" y="345" class="badge-text" font-size="12">REGISTRATION DESK</text>
+
+  <!-- ================= BOTTOM SECTION ================= -->
+
+  <!-- Meeting Room 101 (Magnolia) -->
+  <rect x="40" y="400" width="170" height="150" fill="#dcfce7" stroke="#15803d" stroke-width="2" rx="4" />
+  <text x="125" y="470" class="room-title">Magnolia Room</text>
+  <text x="125" y="488" class="room-desc">Room 101 • Cap: 50</text>
+
+  <!-- Meeting Room 102 (Cypress) -->
+  <rect x="220" y="400" width="170" height="150" fill="#dcfce7" stroke="#15803d" stroke-width="2" rx="4" />
+  <text x="305" y="470" class="room-title">Cypress Room</text>
+  <text x="305" y="488" class="room-desc">Room 102 • Cap: 50</text>
+
+  <!-- Restrooms -->
+  <rect x="400" y="400" width="170" height="150" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2" rx="4" />
+  <text x="485" y="465" class="room-title">Restrooms</text>
+  <text x="485" y="485" class="room-desc">Men's / Women's / ADA</text>
+
+  <!-- Elevators & Stairs -->
+  <rect x="580" y="400" width="180" height="150" fill="#fee2e2" stroke="#b91c1c" stroke-width="2" rx="4" />
+  <text x="670" y="465" class="room-title">Elevators &amp; Stairs</text>
+  <text x="670" y="485" class="room-desc">Main Lobby Access</text>
+
+  <!-- ================= DOORS & ACCESS INDICATORS ================= -->
+
+  <!-- Ballroom Main Doors -->
+  <rect x="130" y="287" width="50" height="6" fill="#2563eb" />
+  <rect x="365" y="287" width="50" height="6" fill="#2563eb" />
+
+  <!-- Boardroom Door -->
+  <rect x="620" y="197" width="40" height="6" fill="#2563eb" />
+
+  <!-- Breakout Room Doors -->
+  <rect x="100" y="397" width="40" height="6" fill="#2563eb" />
+  <rect x="280" y="397" width="40" height="6" fill="#2563eb" />
+
+  <!-- Restroom Door -->
+  <rect x="465" y="397" width="40" height="6" fill="#2563eb" />
+
+  <!-- Elevator Entrance -->
+  <rect x="650" y="397" width="40" height="6" fill="#2563eb" />
+
+  <!-- ================= LEGEND ================= -->
+  <g transform="translate(40, 575)">
+    <!-- Legend Item 1: Ballrooms -->
+    <rect x="0" y="0" width="16" height="16" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.5" rx="2" />
+    <text x="24" y="12" class="legend-text">Ballrooms</text>
+
+    <!-- Legend Item 2: Boardroom -->
+    <rect x="110" y="0" width="16" height="16" fill="#fef3c7" stroke="#b45309" stroke-width="1.5" rx="2" />
+    <text x="134" y="12" class="legend-text">Executive Suite</text>
+
+    <!-- Legend Item 3: Breakout Rooms -->
+    <rect x="240" y="0" width="16" height="16" fill="#dcfce7" stroke="#15803d" stroke-width="1.5" rx="2" />
+    <text x="264" y="12" class="legend-text">Breakout Rooms</text>
+
+    <!-- Legend Item 4: Doors/Entrances -->
+    <rect x="380" y="5" width="20" height="6" fill="#2563eb" rx="1" />
+    <text x="408" y="12" class="legend-text">Doors / Entry Points</text>
+
+    <!-- Legend Item 5: Partition Line -->
+    <line x1="530" y1="8" x2="550" y2="8" stroke="#4338ca" stroke-width="2" stroke-dasharray="3,3" />
+    <text x="558" y="12" class="legend-text">Dividing Partition</text>
+  </g>
+</svg>

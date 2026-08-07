@@ -1,0 +1,31 @@
+{
+  "short_name": "HBES2026",
+  "name": "HBES 2026",
+  "description": "Browse days, sessions, presentations, and track your favorites offline.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "1170x2532",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#ffffff",
+  "theme_color": "#18bc9c",
+  "display": "standalone",
+  "orientation": "portrait"
+}

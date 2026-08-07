@@ -1,0 +1,9 @@
+{
+  "name": "conference-app",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix astro-app run dev",
+    "build": "npm --prefix astro-app run build",
+    "preview": "npm --prefix astro-app run preview"
+  }
+}
