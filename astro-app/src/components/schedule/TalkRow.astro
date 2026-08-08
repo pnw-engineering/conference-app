@@ -1,0 +1,39 @@
+---
+interface Props {
+  talkId: string;
+  timeLabel: string;
+}
+
+const { talkId, timeLabel } = Astro.props;
+---
+
+<div class="d-flex align-items-center mb-2">
+  <button
+    type="button"
+    class="btn btn-light text-start pseudo-btn"
+    data-bs-toggle="modal"
+    data-bs-target="#globalTalkModal"
+    data-id={talkId}
+    data-time={timeLabel}
+  >
+    <slot />
+  </button>
+  <button
+    type="button"
+    class="btn btn-link p-0 text-muted ms-2 share-btn"
+    data-route="talk"
+    data-id={talkId}
+    title="Share Talk"
+  >
+    <img class="share-icon" src="./share.svg" alt="Share" />
+  </button>
+  <button
+    type="button"
+    class="fav-btn"
+    data-type="talk"
+    data-id={talkId}
+    title="Favorite"
+  >
+    <img src="./star.svg" alt="Favorite" />
+  </button>
+</div>

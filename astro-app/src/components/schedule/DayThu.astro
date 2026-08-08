@@ -1,0 +1,7 @@
+﻿---
+import ThuMorning from "./periods/ThuMorning.astro";
+import ThuAfternoon from "./periods/ThuAfternoon.astro";
+---
+<div class="tab-pane fade" id="pills-Thu" role="tabpanel" aria-labelledby="pills-Thu-tab" tabindex="0"><!-- Morning / Afternoon Sub Tabs --><ul class="nav nav-pills sub-nav-pills gap-2 mb-3" id="pills-Thu-period-tab" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" id="pills-Thu-morning-tab" data-bs-toggle="pill" data-bs-target="#pills-Thu-morning" type="button" role="tab" aria-controls="pills-Thu-morning" aria-selected="true">Morning</button></li><li class="nav-item" role="presentation"><button class="nav-link" id="pills-Thu-afternoon-tab" data-bs-toggle="pill" data-bs-target="#pills-Thu-afternoon" type="button" role="tab" aria-controls="pills-Thu-afternoon" aria-selected="false">Afternoon</button></li></ul><!-- Sub Tab Content --><div class="tab-content" id="pills-Thu-period-tabContent">  <ThuMorning />  <ThuAfternoon /></div></div>
+
+

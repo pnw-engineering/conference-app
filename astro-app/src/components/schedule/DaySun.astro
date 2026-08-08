@@ -1,0 +1,7 @@
+﻿---
+import SunMorning from "./periods/SunMorning.astro";
+import SunAfternoon from "./periods/SunAfternoon.astro";
+---
+<div class="tab-pane fade show active" id="pills-Sun" role="tabpanel" aria-labelledby="pills-Sun-tab" tabindex="0"><!-- Morning / Afternoon Sub Tabs --><ul class="nav nav-pills sub-nav-pills gap-2 mb-3" id="pills-Sun-period-tab" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" id="pills-Sun-morning-tab" data-bs-toggle="pill" data-bs-target="#pills-Sun-morning" type="button" role="tab" aria-controls="pills-Sun-morning" aria-selected="true">Morning</button></li><li class="nav-item" role="presentation"><button class="nav-link" id="pills-Sun-afternoon-tab" data-bs-toggle="pill" data-bs-target="#pills-Sun-afternoon" type="button" role="tab" aria-controls="pills-Sun-afternoon" aria-selected="false">Afternoon</button></li></ul><!-- Sub Tab Content --><div class="tab-content" id="pills-Sun-period-tabContent">  <SunMorning />  <SunAfternoon /></div></div>
+
+

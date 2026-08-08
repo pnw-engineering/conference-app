@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="card rounded-0">
+  <div class="card-body">
+    <h6 class="card-title">{title}</h6>
+    <h7 class="card-subtitle mb-2 text-muted">{subtitle}</h7>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+---
+import TalkRow from "../TalkRow.astro";
+import SessionItem from "../SessionItem.astro";
+import BreakCard from "../BreakCard.astro";
+---
+<div class="tab-pane fade show active" id="pills-Fri-morning" role="tabpanel" aria-labelledby="pills-Fri-morning-tab" tabindex="0">
+<div class="accordion" id="accordion-Fri-morning">
+<BreakCard title="Breakfast" subtitle="08:15 AM Lobby" />
+<SessionItem
+  accordionId="accordion-Fri-morning"
+  collapseId="collapses150546"
+  sessionId="s150546"
+  sessionTitle="Invited Talks"
+  timeLabel="08:45 AM. Auditorium"
+  sessionDataTitle=""
+  sessionTime="2026-07-31 08:45:00-07:00"
+  location="Auditorium"
+>
+<!-- Cleaned Talk Entry -->
+<TalkRow talkId="c176484" timeLabel="08:45 AM. ">Progress in THz acceleration</TalkRow>
+<!-- Cleaned Talk Entry -->
+<TalkRow talkId="c169873" timeLabel="09:15 AM. ">Dephasingless laser wakefield acceleration of electrons using a flying focus</TalkRow>
+<!-- Cleaned Talk Entry -->
+<TalkRow talkId="c169874" timeLabel="09:45 AM. ">High-dimensional phase space reconstruction using generative modeling of beam distributions</TalkRow>
+</SessionItem>
+<BreakCard title="Coffee Break" subtitle="10:15 AM lobby" />
+<SessionItem
+  accordionId="accordion-Fri-morning"
+  collapseId="collapses169875"
+  sessionId="s169875"
+  sessionTitle="Student Prizes"
+  timeLabel="10:45 AM. Auditorium"
+  sessionDataTitle=""
+  sessionTime="2026-07-31 10:45:00-07:00"
+  location="Auditorium"
+  disabled={true}
+>
+</SessionItem>
+</div>
+</div>

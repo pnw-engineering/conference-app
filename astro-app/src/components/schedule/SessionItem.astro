@@ -1,0 +1,81 @@
+---
+interface Props {
+  accordionId: string;
+  collapseId: string;
+  sessionId: string;
+  sessionTitle: string;
+  timeLabel: string;
+  sessionDataTitle?: string;
+  sessionTime?: string;
+  location?: string;
+  disabled?: boolean;
+}
+
+const {
+  accordionId,
+  collapseId,
+  sessionId,
+  sessionTitle,
+  timeLabel,
+  sessionDataTitle = "",
+  sessionTime = "",
+  location = "",
+  disabled = false,
+} = Astro.props;
+---
+
+<div class="accordion-item">
+  <h2
+    class="accordion-header d-flex justify-content-between align-items-center"
+  >
+    <button
+      class="accordion-button collapsed flex-grow-1"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target={`#${collapseId}`}
+      aria-expanded="false"
+      aria-controls={collapseId}
+      disabled={disabled}
+    >
+      <div class="pe-2">
+        <span class="fw-bold d-block mb-1" style="line-height: 1.3"
+          >{sessionTitle}</span
+        >
+        <small class="text-muted fw-normal">{timeLabel}</small>
+      </div>
+    </button>
+    <div class="action-panel border-start py-1 bg-white" style="z-index: 2">
+      <button
+        type="button"
+        class="fav-btn mb-1"
+        data-type="session"
+        data-id={sessionId}
+        data-title={sessionDataTitle}
+        data-time={sessionTime}
+        data-location={location}
+        title="Favorite"
+      >
+        <img src="./star.svg" alt="Favorite" />
+      </button>
+      <button
+        type="button"
+        class="btn btn-link share-btn"
+        data-route="session"
+        data-id={sessionId}
+        data-title={sessionDataTitle}
+        title="Share Session"
+      >
+        <img class="share-icon" src="./share.svg" alt="Share" />
+      </button>
+    </div>
+  </h2>
+  <div
+    id={collapseId}
+    class="accordion-collapse collapse"
+    data-bs-parent={`#${accordionId}`}
+  >
+    <div class="accordion-body">
+      <slot />
+    </div>
+  </div>
+</div>

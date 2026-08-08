@@ -273,6 +273,79 @@ if (!window.bootstrap?.Tab) {
   });
 }
 
+if (!window.bootstrap?.Modal) {
+  document.addEventListener("click", (event) => {
+    const modalTrigger = event.target.closest('[data-bs-toggle="modal"]');
+    if (modalTrigger) {
+      const selector =
+        modalTrigger.getAttribute("data-bs-target") ||
+        modalTrigger.getAttribute("href");
+      if (!selector) return;
+
+      const modalEl = document.querySelector(selector);
+      if (!modalEl) return;
+
+      event.preventDefault();
+      getModalController(modalEl)?.show(modalTrigger);
+      return;
+    }
+
+    const dismissTrigger = event.target.closest('[data-bs-dismiss="modal"]');
+    if (!dismissTrigger) return;
+
+    const modalEl = dismissTrigger.closest(".modal");
+    if (!modalEl) return;
+
+    event.preventDefault();
+    getModalController(modalEl)?.hide();
+  });
+
+  // Match common modal behavior: click backdrop to close.
+  document.addEventListener("click", (event) => {
+    const modalEl = event.target.closest(".modal.show");
+    if (!modalEl) return;
+    if (event.target !== modalEl) return;
+
+    getModalController(modalEl)?.hide();
+  });
+
+  // Match common modal behavior: Esc closes the topmost open modal.
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    const openModals = Array.from(document.querySelectorAll(".modal.show"));
+    const topModal = openModals[openModals.length - 1];
+    if (!topModal) return;
+
+    getModalController(topModal)?.hide();
+  });
+}
+
+if (!window.bootstrap?.Collapse) {
+  document.addEventListener("click", (event) => {
+    const collapseTrigger = event.target.closest('[data-bs-toggle="collapse"]');
+    if (!collapseTrigger) return;
+
+    const selector =
+      collapseTrigger.getAttribute("data-bs-target") ||
+      collapseTrigger.getAttribute("href");
+    if (!selector) return;
+
+    const collapseEl = document.querySelector(selector);
+    if (!collapseEl) return;
+
+    event.preventDefault();
+    const controller = getCollapseController(collapseEl);
+    if (!controller) return;
+
+    if (collapseEl.classList.contains("show")) {
+      controller.hide();
+    } else {
+      controller.show();
+    }
+  });
+}
+
 // Clean up favorites from past conferences
 // Object.keys(localStorage).forEach((key) => {
 //     if (key.startsWith("conference_favorites_") && key !== STORAGE_KEY) {
