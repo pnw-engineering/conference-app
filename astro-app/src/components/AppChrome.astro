@@ -1,0 +1,145 @@
+<div id="app-favorites-view" class="container-fluid pt-3" style="display: none">
+  <div class="d-flex justify-content-between align-items-center px-2 mb-4">
+    <h3 class="m-0">Favorites</h3>
+    <button
+      type="button"
+      id="btn-export-favorites"
+      class="btn btn-link btn-sm d-flex align-items-center gap-1"
+    >
+      <img
+        id="share-icon-img"
+        class="share-icon"
+        src="./share.svg"
+        alt="Share"
+      />
+    </button>
+  </div>
+  <div id="favorites-list"></div>
+</div>
+
+<div id="app-map-view" class="container-fluid pt-3" style="display: none">
+  <div class="px-2 mb-4">
+    <h3 class="m-0">Venue Map</h3>
+  </div>
+  <div class="text-center py-3">
+    <img
+      src="./map.svg"
+      class="img-fluid"
+      alt="Venue Map"
+      style="max-width: 100%; height: auto"
+    />
+  </div>
+</div>
+
+<nav class="fixed-bottom bg-white border-top shadow-sm" style="height: 60px">
+  <div class="container d-flex justify-content-around align-items-center">
+    <a
+      href="#"
+      id="btn-nav-schedule"
+      class="text-decoration-none text-muted text-center nav-link-btn"
+    >
+      <img src="./calendar3.svg" class="fs-4" alt="Calendar" />
+      <div style="font-size: 10px">Schedule</div>
+    </a>
+    <a
+      href="#"
+      id="btn-nav-authors"
+      class="text-decoration-none text-muted text-center nav-link-btn"
+    >
+      <img src="./person.svg" class="fs-4" alt="Authors" />
+      <div style="font-size: 10px">Authors</div>
+    </a>
+    <a
+      href="#"
+      id="btn-nav-favorites"
+      class="text-decoration-none text-muted text-center nav-link-btn"
+    >
+      <img src="./star.svg" class="fs-4" alt="Star" />
+      <div style="font-size: 10px">Favorites</div>
+    </a>
+    <a
+      href="#"
+      id="btn-nav-map"
+      class="text-decoration-none text-muted text-center nav-link-btn"
+    >
+      <img src="./map.svg" class="fs-4" alt="Map" />
+      <div style="font-size: 10px">Map</div>
+    </a>
+  </div>
+</nav>
+
+<div id="global-modals">
+  <div
+    class="modal fade"
+    id="globalTalkModal"
+    tabindex="-1"
+    aria-labelledby="globalTalkModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div
+          class="modal-header d-flex justify-content-between align-items-center"
+        >
+          <span id="modal-talk-meta"></span>
+          <div class="d-flex align-items-center gap-3">
+            <button
+              type="button"
+              id="modal-copy-btn"
+              class="btn btn-link p-0 text-muted share-btn"
+              data-route="talk"
+              data-id=""
+              data-title=""
+              title="Share Talk"
+            >
+              <img class="share-icon" src="./share.svg" alt="Share" />
+            </button>
+            <button
+              type="button"
+              id="modal-fav-btn"
+              class="fav-btn"
+              data-type="talk"
+              data-id=""
+              title="Favorite"
+            >
+              <img src="./star.svg" alt="Favorite" />
+            </button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body" id="modal-talk-abstract"></div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="qrScannerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Scan Participant Badge</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-dark p-0 position-relative">
+        <div id="qr-video-reader" style="width: 100%"></div>
+      </div>
+    </div>
+  </div>
+</div>

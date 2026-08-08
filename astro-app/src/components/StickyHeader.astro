@@ -1,0 +1,135 @@
+<div
+  class="sticky-top bg-white pt-3 pb-2 mb-3 border-bottom"
+  style="top: 0; z-index: 1020"
+>
+  <h3 class="mb-3">Advanced Accelerator Concepts 2026</h3>
+  <div class="mb-3">
+    <div class="input-group">
+      <input
+        type="text"
+        id="search-input"
+        class="form-control form-control-lg"
+        placeholder="Search talks by title or abstract..."
+        autocomplete="off"
+      />
+      <button
+        class="btn btn-small"
+        type="button"
+        id="clear-search"
+        style="display: none"
+      >
+        <img src="./x.svg" alt="X" />
+      </button>
+      <button
+        class="btn btn-outline"
+        type="button"
+        id="btn-scan-qr"
+        title="Scan Badge QR"
+      >
+        <img src="./qr-code-scan.svg" alt="QRcode" />
+      </button>
+    </div>
+    <div
+      id="search-results"
+      class="list-group mt-2"
+      style="max-height: 300px; overflow-y: auto"
+    >
+    </div>
+  </div>
+
+  <ul
+    class="nav nav-pills flex-nowrap overflow-x-auto text-nowrap mb-3"
+    id="pills-tab"
+    role="tablist"
+  >
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link active"
+        id="pills-Sun-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-Sun"
+        type="button"
+        role="tab"
+        aria-controls="pills-Sun"
+        aria-selected="true"
+      >
+        Sun
+      </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-Mon-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-Mon"
+        type="button"
+        role="tab"
+        aria-controls="pills-Mon"
+        aria-selected="false"
+      >
+        Mon
+      </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-Tue-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-Tue"
+        type="button"
+        role="tab"
+        aria-controls="pills-Tue"
+        aria-selected="false"
+      >
+        Tue
+      </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-Wed-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-Wed"
+        type="button"
+        role="tab"
+        aria-controls="pills-Wed"
+        aria-selected="false"
+      >
+        Wed
+      </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-Thu-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-Thu"
+        type="button"
+        role="tab"
+        aria-controls="pills-Thu"
+        aria-selected="false"
+      >
+        Thu
+      </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-Fri-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-Fri"
+        type="button"
+        role="tab"
+        aria-controls="pills-Fri"
+        aria-selected="false"
+      >
+        Fri
+      </button>
+    </li>
+  </ul>
+</div>

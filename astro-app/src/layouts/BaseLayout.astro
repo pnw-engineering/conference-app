@@ -1,0 +1,35 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = "Advanced Accelerator Concepts 2026" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="theme-color" content="#ecb73c" />
+    <!-- <link rel="manifest" href="manifest.json" /> -->
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/bootstrap-icons.min.css" />
+
+    <!-- <link rel="apple-touch-icon" href="ios/apple-icon-180.png" /> -->
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content={title} />
+
+    <link rel="stylesheet" href="/app.css" />
+    <script is:inline src="/html5-qrcode.min.js" type="text/javascript"
+    ></script>
+  </head>
+
+  <body class="pb-70">
+    <slot />
+    <script is:inline src="/app.js"></script>
+  </body>
+</html>
